@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
 using proyecto_melany.Data;
+using proyecto_melany.Implementacion;
+using proyecto_melany.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,8 @@ var connectionSting = builder.Configuration
 builder.Services.AddDbContext<DBContext>(options =>
     options.UseNpgsql(connectionSting)
 );
+
+builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
