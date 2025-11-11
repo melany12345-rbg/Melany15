@@ -8,10 +8,10 @@ namespace proyecto_melany.Models
     public class usuariomodel
     {
         public int UserId { get; set; }
-        public string Usuario_Nombre { get; set; }
-        public string Usuario_Apellido { get; set; }
-        public string Usuario_Correo { get; set; }
-        public string Usuario_Constrasena { get; set; }
+        public required string Usuario_Nombre { get; set; }
+        public required string Usuario_Apellido { get; set; }
+        public required string Usuario_Correo { get; set; }
+        public required string Usuario_Constrasena { get; set; }
 
 
 

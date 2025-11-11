@@ -12,30 +12,22 @@ namespace proyecto_melany.Implementacion
     public class UsuarioService : IUsuarioService
     {
         private readonly DBContext dBContext;
+        private readonly IPasswordServicio passwordServicio;
 
-        public UsuarioService(DBContext dBContext)
+        public UsuarioService(DBContext dBContext,IPasswordServicio passwordServicio)
         {
             this.dBContext = dBContext;
+            this.passwordServicio = passwordServicio; 
         }
-        public async void CrearUsuarioAsync(usuariomodel usuario)
+        public async Task CrearUsuario(usuariomodel usuario)
         {
-           if (usuario != null)
-             {
+            if (usuario != null)
+            {
+                usuario.Usuario_Constrasena = passwordServicio.HashPassword(usuario.Usuario_Constrasena);
                 dBContext.Usuarios.Add(usuario);
                 await dBContext.SaveChangesAsync();
 
-             }
-
-
-
-
-        }
-        public void CrearUsuario(usuariomodel usuario)
-        
-        {
-            throw new NotImplementedException();
-
-
+            }
         }
     }
 }

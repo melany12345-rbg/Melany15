@@ -13,9 +13,12 @@ builder.Services.AddDbContext<DBContext>(options =>
     options.UseNpgsql(connectionSting)
 );
 
+
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+builder.Services.AddScoped<IPasswordServicio, passwordServicio>();
+
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews();                                                                                                                                                                                                                                             
 
 var app = builder.Build();
 

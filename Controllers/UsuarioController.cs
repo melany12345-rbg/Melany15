@@ -13,6 +13,7 @@ namespace proyecto_melany.Controllers
 
 
     [Route("user")]
+    [ApiController]
     public class UsuarioController : Controller
     {
         private readonly IUsuarioService usuarioService;
@@ -24,11 +25,11 @@ namespace proyecto_melany.Controllers
 
         [HttpPost]
         [Route("register")]
-        public IActionResult Register(usuariomodel usuario)
+        public async Task<IActionResult> Register(usuariomodel usuario)
         {
             if (usuario != null)
             {
-                usuarioService.CrearUsuario(usuario);
+                await usuarioService.CrearUsuario(usuario);
                 return Ok("usuario creado");
 
             }
@@ -36,6 +37,12 @@ namespace proyecto_melany.Controllers
             {
                 return BadRequest("usuario no pude ser null");
             }
+        }
+        [HttpGet]
+        [Route("register")]
+        public IActionResult Register()
+        {
+            return View();
         }
     }
 }
