@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("proyecto_melany")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+844db73aa57d05dd2db6f4df54a111ac94332616")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+16f488f4abbe1e2986b6550b25dca0a7538602e5")]
 [assembly: System.Reflection.AssemblyProductAttribute("proyecto_melany")]
 [assembly: System.Reflection.AssemblyTitleAttribute("proyecto_melany")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
